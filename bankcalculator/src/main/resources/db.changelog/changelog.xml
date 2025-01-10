@@ -1,0 +1,14 @@
+<changeSet id="2" author="ivan">
+    <createTable tableName="transaction">
+        <column name="id" type="uuid" autoIncrement="false">
+            <constraints primaryKey="true" nullable="false"/>
+        </column>
+        <column name="amount" type="int"/>
+        <column name="user_id" type="uuid" autoIncrement="false">
+            <constraints nullable="false" foreignKeyName = "fk_user_id"
+                         references = "users(id)"  />
+        </column>
+        <column name="transaction_date" type="date"/>
+
+    </createTable>
+</changeSet>
